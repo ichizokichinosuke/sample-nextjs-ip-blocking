@@ -22,7 +22,7 @@ export default function Index() {
     mutate()
   }
 
-  useScript("../scripts/install-client-key.js");
+  useScript("../install-client-key.js");
 
   return (
     <Page>
