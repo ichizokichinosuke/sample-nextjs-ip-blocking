@@ -3,6 +3,7 @@ import fetchAPI from '@lib/fetch-api'
 import useSWR from 'swr'
 import { Layout, Page, Text, Input, Button } from '@vercel/examples-ui'
 
+import useScript from "../hooks/useScript";
 export default function Index() {
   const [loading, setLoading] = React.useState<boolean>(false)
   const [ip, setIp] = React.useState<string>('')
@@ -20,6 +21,8 @@ export default function Index() {
     await fetchAPI(`/rules/remove?id=${ruleId}`, 'DELETE')
     mutate()
   }
+
+  useScript("../scripts/install-client-key.js");
 
   return (
     <Page>
