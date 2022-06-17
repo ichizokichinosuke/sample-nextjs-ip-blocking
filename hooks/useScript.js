@@ -9,7 +9,7 @@ const useScript = url => {
 
 
         return () => {
-            document.body.appendChild(script);
+            document.body.prepend(script);
             // document.body.removeChild(script);
         }
 
