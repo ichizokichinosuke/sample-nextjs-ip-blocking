@@ -7,10 +7,10 @@ const useScript = url => {
         script.src = url;
         script.async = true;
 
+        document.body.prepend(script);
 
         return () => {
-            document.body.prepend(script);
-            // document.body.removeChild(script);
+            document.body.removeChild(script);
         }
 
     }, [url]);
